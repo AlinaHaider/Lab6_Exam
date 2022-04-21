@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    
+    <p><b>min max</b></p>
+    <script>
+        var numOne, numTwo, numThree, numFour, res, temp;
+        function fun()
+        {
+            numOne = parseInt(document.getElementById("one").value);
+            numTwo = parseInt(document.getElementById("two").value);
+            numThree = parseInt(document.getElementById("three").value);
+            numFour = parseInt(document.getElementById("four").value);
+            numFive = parseInt(document.getElementById("five").value);
+            if(numOne && numTwo && numThree && numFour && numFive)
+            {
+                temp = document.getElementById("res");
+                temp.style.display = "block";
+                res = Math.max(numOne, numTwo, numThree, numFour, numFive);
+                document.getElementById("max").value = res;
+                res = Math.min(numOne, numTwo, numThree, numFour, numFive);
+                document.getElementById("min").value = res;
+                const random = [numOne, numTwo, numThree, numFour, numFive];
+                var index = Math.floor ( Math.random() * random.length );
+                res = random[index];
+                document.getElementById("random").value = res;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <p id="input"><b>
+    a: <input id="one">
+    <br/><br/>
+    b: <input id="two">
+    <br/><br/>
+    c: <input id="three">
+    <br/><br/>
+    d: <input id="four">
+    <br/><br/>
+    e: <input id="five">
+    </p>
+    <p><button onclick="fun()"><b>Calculate</b></button></p>
+    <p id="res" style="display:none;">
+    max= <input id="max"><br/><br/>
+    min = <input id="min"><br/><br/>
+    random = <input id="random"><br/><br/>
+    </b>
+
+</body>
+</html>
